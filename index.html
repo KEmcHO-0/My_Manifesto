@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>নির্বাচনী ইশতেহার - স্মার্ট ক্যাম্পাস</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div class="loader" id="loader">
+    <div class="loader-content">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">লোড হচ্ছে...</div>
+    </div>
+</div>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- Dark Mode Toggle -->
+<button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+    <i class="fas fa-moon"></i>
+    <i class="fas fa-sun"></i>
+</button>
+
+<!-- Floating Navigation -->
+<nav class="floating-nav">
+    <button class="nav-btn primary hidden" id="scrollTopBtn" onclick="scrollToTop()" data-tooltip="উপরে যান">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <button class="nav-btn accent tooltip" data-tooltip="শেয়ার করুন" onclick="shareContent()">
+        <i class="fas fa-share-alt"></i>
+    </button>
+</nav>
+
+<header>
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Floating Shapes -->
+    <div class="floating-shapes">
+        <div class="shape circle" style="top: 20%; left: 10%;"></div>
+        <div class="shape square" style="top: 60%; left: 80%;"></div>
+        <div class="shape triangle" style="top: 30%; left: 70%;"></div>
+        <div class="shape circle" style="top: 70%; left: 20%;"></div>
+    </div>
+    
+    <h1>🎯 স্মার্ট ক্যাম্পাস, সমৃদ্ধ আগামীর অঙ্গীকার</h1>
+    <p>সুষ্ঠু ব্যবস্থাপনা ও প্রযুক্তিগত উন্নয়নের লক্ষ্যে নির্বাচনী ইশতেহার</p>
+</header>
+<div class="container">
+    <!-- Candidate Profile Section -->
+    <section class="candidate-profile">
+        <div class="profile-photo">
+            <!-- Replace the src with your actual photo URL -->
+            <img src="/photo.jpeg" alt="Candidate Photo" onerror="this.parentElement.innerHTML='👤'">
+        </div>
+        <h2 class="candidate-name">ফাহমিদ হাসান তুহিন </h2>
+        <p style="color: #64748b; font-size: 1.1rem; margin-bottom: 10px;">প্রার্থী, তথ্য ও প্রযুক্তি সম্পাদক</p>
+        <div class="ballot-container">
+            <div class="ballot-badge" onclick="createConfetti()">
+                <div class="ballot-glow"></div>
+                <div class="ballot-inner">
+                    <span class="ballot-label">🗳️ ব্যালট নং</span>
+                    <span class="ballot-number">০৪</span>
+                </div>
+                <div class="ballot-shimmer"></div>
+                <div class="ballot-particles">
+                    <span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+            <p class="ballot-hint">👆 ক্লিক করুন</p>
+        </div>
+    </section>
+
+    <section class="intro">
+        <p>সুপ্রিয় শিক্ষার্থীবৃন্দ, আমাদের ক্যাম্পাসকে একটি আধুনিক, নিরাপদ এবং প্রযুক্তিবিদ্যার কেন্দ্রবিন্দু হিসেবে গড়ে তুলতে আমি আপনাদের সামনে আমার পরিকল্পনা তুলে ধরছি।</p>
+    </section>
+
+    <h2 class="section-title">আমাদের প্রতিশ্রুতি</h2>
+
+    <div class="grid">
+        <div class="card">
+            <i class="fas fa-shield-alt card-icon"></i>
+            <h3><span class="number">১</span> নিরাপদ সাইবার স্পেস</h3>
+            <p>সাইবার বুলিং ও অনলাইন হয়রানি নির্মূলে জিরো টলারেন্স নীতি। কার্যকর রিপোর্টিং সিস্টেম ও দ্রুত প্রশাসনিক পদক্ষেপ নিশ্চিত করা হবে।</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-wifi card-icon"></i>
+            <h3><span class="number">২</span> স্থিতিশীল ইন্টারনেট</h3>
+            <p>ক্যাম্পাসের প্রতিটি প্রান্তে উচ্চগতির ইন্টারনেট নিশ্চিতকরণ এবং সকল অনলাইন সার্ভিসকে ব্যবহারবান্ধব ও আধুনিকায়ন করা হবে।</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-calendar-alt card-icon"></i>
+            <h3><span class="number">৩</span> SUST ইভেন্ট সিস্টেম</h3>
+            <p>Central Event Management System-এর মাধ্যমে সকল ক্লাব কার্যক্রম, নোটিশ ও রেজিস্ট্রেশন এক প্ল্যাটফর্মে নিয়ে আসা হবে।</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-lightbulb card-icon"></i>
+            <h3><span class="number">৪</span> IT & Science Fair</h3>
+            <p>শিক্ষার্থীদের উদ্ভাবনী প্রতিভা তুলে ধরতে প্রতি বছর বার্ষিক আইটি ও সায়েন্স ফেয়ার এবং কেন্দ্রীভূত প্রতিযোগিতার আয়োজন।</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-laptop-code card-icon"></i>
+            <h3><span class="number">৫</span> ২৪/৭ কম্পিউটার ল্যাব</h3>
+            <p>প্রতিটি একাডেমিক বিল্ডিংয়ে রাত-দিন ২৪ ঘণ্টা ল্যাব সুবিধা নিশ্চিত করা হবে, যাতে কোডিং ও প্রজেক্টের কাজ ব্যাহত না হয়।</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-comments card-icon"></i>
+            <h3><span class="number">৬</span> দাবি.com পোর্টাল</h3>
+            <p>একটি আধুনিক অ্যাপ ও পোর্টাল চালু করা হবে যেখানে শিক্ষার্থীরা সরাসরি সমস্যা রিপোর্ট করতে পারবে এবং লাইভ আপডেট দেখতে পাবে।</p>
+        </div>
+    </div>
+
+    <section class="commitment">
+        <h2>🌟 আমার বিশেষ অঙ্গীকার</h2>
+        <p>আমি কেবল প্রতিশ্রুতিতে নই, জবাবদিহিতায় বিশ্বাসী। নির্বাচিত হওয়ার <strong>৪ মাসের মধ্যে ইশতেহারের অন্তত ৪০% বাস্তবায়ন</strong> করবো। ব্যর্থতায় এবং অভিযোগ প্রমাণিত হলে আমি স্বেচ্ছায় পদত্যাগ করবো।</p>
+        
+        <!-- Counter Section -->
+        <div class="counter-box">
+            <div class="counter-item">
+                <span class="counter-number" data-target="6">0</span>
+                <span class="counter-label">মূল প্রতিশ্রুতি</span>
+            </div>
+            <div class="counter-item">
+                <span class="counter-number" data-target="4">0</span>
+                <span class="counter-label">মাসে বাস্তবায়ন</span>
+            </div>
+            <div class="counter-item">
+                <span class="counter-number" data-target="40">0</span>
+                <span class="counter-label">% গ্যারান্টি</span>
+            </div>
+        </div>
+        
+        <div class="quote" id="typewriter">"আমি দায়িত্ব নিতে চাই, এড়িয়ে যেতে নয়।"</div>
+        
+        <!-- Contact Text -->
+        <p style="margin-top: 25px; font-size: 1.1rem; color: #78350f;">📞 যেকোনো পরামর্শ ও প্রয়োজনে আমি আছি আপনার পাশে</p>
+        
+        <!-- Social Links -->
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=100088108552227" class="social-link facebook" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/fahmidhasan420/" class="social-link instagram" title="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/fahmid-hasan-tuhin-9b9a8a274/" class="social-link linkedin" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <p>💙 &copy; 2026 নির্বাচনী প্রচার সেল | SUST</p>
+        <p style="margin-top: 10px; font-size: 0.9rem;">ভোট আপনার অধিকার, সমৃদ্ধি আমাদের অঙ্গীকার।</p>
+    </footer>
+</div>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/8801942357476" class="whatsapp-float" target="_blank" title="WhatsApp এ মেসেজ করুন">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
